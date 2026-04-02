@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Life Care Adult Family Home in Vancouver, WA — compassionate, licensed residential care specializing in mental health, dementia, and developmental disabilities. Call (360) 260-9691." />
+  <meta name="keywords" content="adult family home Vancouver WA, senior care Vancouver Washington, dementia care, mental health care home, developmental disabilities, Estera Rosca" />
+  <title>Life Care Adult Family Home | Vancouver, WA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+  /* ─── TOKENS ───────────────────────────────────────── */
+  :root {
+    --linen:        #FAF7F2;
+    --linen-warm:   #F4EDE1;
+    --cream:        #EDE4D5;
+    --cream-light:  #F9F4ED;
+    --sage:         #7B9E82;
+    --sage-dark:    #5A7A61;
+    --sage-soft:    #C8DEC9;
+    --amber:        #C4936A;
+    --amber-dark:   #A5744D;
+    --amber-soft:   #F2DCC5;
+    --text:         #3B3028;
+    --text-soft:    #7A6B5E;
+    --text-lighter: #A8998C;
+    --white:        #FFFFFF;
+    --shadow-sm:    0 2px 12px rgba(90,60,30,0.07);
+    --shadow-md:    0 6px 28px rgba(90,60,30,0.10);
+    --shadow-lg:    0 16px 48px rgba(90,60,30,0.13);
+    --radius-sm:    10px;
+    --radius-md:    16px;
+    --radius-lg:    24px;
+    --nav-h:        70px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--linen);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a   { color: inherit; text-decoration: none; }
+
+  /* ─── UTILITIES ────────────────────────────────────── */
+  .container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .section { padding: 6rem 0; }
+  .section-cream { background: var(--cream-light); }
+  .section-warm  { background: var(--linen-warm); }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 0.85rem;
+  }
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--sage);
+    border-radius: 2px;
+  }
+
+  h1, h2, h3 { font-family: 'Lora', Georgia, serif; line-height: 1.2; color: var(--text); }
+  h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 500; }
+  h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 500; }
+  h3 { font-size: 1.3rem; font-weight: 500; }
+  p  { color: var(--text-soft); font-size: 1rem; font-weight: 400; }
+
+  .section-intro { text-align: center; margin-bottom: 3.5rem; }
+  .section-intro h2 { margin-bottom: 0.85rem; }
+  .section-intro p  { max-width: 560px; margin: 0 auto; font-size: 1.05rem; }
+
+  /* ─── BUTTONS ──────────────────────────────────────── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.85rem 2rem;
+    border-radius: 100px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    text-decoration: none;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-amber {
+    background: var(--amber);
+    color: var(--white);
+    box-shadow: 0 4px 18px rgba(196,147,106,0.35);
+  }
+  .btn-amber:hover {
+    background: var(--amber-dark);
+    box-shadow: 0 8px 24px rgba(196,147,106,0.45);
+  }
+  .btn-sage {
+    background: var(--sage-dark);
+    color: var(--white);
+    box-shadow: 0 4px 18px rgba(90,122,97,0.3);
+  }
+  .btn-sage:hover {
+    background: #496653;
+    box-shadow: 0 8px 24px rgba(90,122,97,0.4);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 2px solid var(--cream);
+  }
+  .btn-outline:hover {
+    background: var(--white);
+    border-color: var(--white);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* ─── NAV ──────────────────────────────────────────── */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+  }
+  .nav.scrolled {
+    background: rgba(250,247,242,0.96);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 1px 20px rgba(90,60,30,0.08);
+  }
+  .nav__inner {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav__brand { display: flex; flex-direction: column; gap: 1px; }
+  .nav__name {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.1;
+  }
+  .nav__sub {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-lighter);
+  }
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav__links a {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-soft);
+    transition: color 0.2s;
+  }
+  .nav__links a:hover { color: var(--sage-dark); }
+  .nav__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .nav__phone {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--sage-dark);
+  }
+  .nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .nav__toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* ─── HERO ─────────────────────────────────────────── */
+  .hero {
+    min-height: 100svh;
+    padding-top: var(--nav-h);
+    background: var(--linen);
+    display: flex;
+    align-items: center;
+  }
+  .hero__inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* Left — text panel */
+  .hero__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  /* Subtle warm decorative circle behind text */
+  .hero__left::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: -80px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--amber-soft) 0%, transparent 70%);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero__left > * { position: relative; z-index: 1; }
+
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--sage-soft);
+    border-radius: 100px;
+    padding: 0.4rem 1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 1.75rem;
+    width: fit-content;
+  }
+  .hero__title {
+    font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.12;
+    margin-bottom: 1.4rem;
+  }
+  .hero__title em {
+    font-style: italic;
+    color: var(--sage-dark);
+  }
+  .hero__desc {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text-soft);
+    max-width: 440px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+  .hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .btn-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  .btn-text:hover { color: var(--sage-dark); }
+  .btn-text span { font-size: 1.1rem; }
+
+  .hero__trust {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .hero__trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-soft);
+  }
+  .hero__trust-check {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--sage-soft);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem;
+    color: var(--sage-dark);
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  /* Right — photo panel */
+  .hero__right {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .hero__photo-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 540px;
+  }
+  .hero__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: block;
+  }
+  /* Floating badge on photo */
+  .hero__photo-badge {
+    position: absolute;
+    bottom: 1.75rem;
+    left: -1.5rem;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.4rem;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    max-width: 240px;
+    border-left: 4px solid var(--amber);
+  }
+  .hero__photo-badge-icon { font-size: 1.6rem; }
+  .hero__photo-badge-title {
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .hero__photo-badge-sub {
+    font-size: 0.72rem;
+    color: var(--text-lighter);
+    margin-top: 0.1rem;
+  }
+  /* Small floating stat top-right of photo */
+  .hero__photo-stat {
+    position: absolute;
+    top: 1.75rem;
+    right: -1rem;
+    background: var(--sage-dark);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    color: var(--white);
+  }
+  .hero__photo-stat-num {
+    font-family: 'Lora', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--white);
+  }
+  .hero__photo-stat-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage-soft);
+    margin-top: 0.2rem;
+  }
+
+  /* Hero responsive */
+  @media (max-width: 900px) {
+    .hero__inner {
+      grid-template-columns: 1fr;
+      padding: 3rem 2rem;
+      gap: 2.5rem;
+    }
+    .hero__left { order: 1; }
+    .hero__left::before { display: none; }
+    .hero__right { order: 2; }
+    .hero__photo-wrap { min-height: 320px; }
+    .hero__photo-badge { left: 1rem; bottom: 1rem; }
+    .hero__photo-stat  { right: 1rem; top: 1rem; }
+  }
+
+  /* ─── TRUST STRIP ──────────────────────────────────── */
+  .trust-strip {
+    background: var(--sage-dark);
+    padding: 1.1rem 0;
+  }
+  .trust-strip__inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .trust-strip__item {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.88);
+  }
+  .trust-strip__item .ic { font-size: 1rem; }
+
+  /* ─── ABOUT ────────────────────────────────────────── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .about-photo-wrap {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  .about-photo-wrap img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+  }
+  .about-photo-badge {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    background: rgba(250,247,242,0.97);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+  .about-photo-badge .leaf { font-size: 1.8rem; }
+  .about-photo-badge-name {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .about-photo-badge-role {
+    font-size: 0.78rem;
+    color: var(--text-soft);
+    margin-top: 0.1rem;
+  }
+  .about-content .eyebrow { margin-top: 0; }
+  .about-content h2 { margin-bottom: 1rem; }
+  .about-content p { margin-bottom: 0.9rem; font-size: 1rem; line-height: 1.8; }
+  .about-divider {
+    width: 48px; height: 3px;
+    background: linear-gradient(to right, var(--amber), var(--sage));
+    border-radius: 2px;
+    margin: 1.75rem 0;
+  }
+  .about-bullets { display: flex; flex-direction: column; gap: 0.6rem; }
+  .about-bullet {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.9rem; font-weight: 500; color: var(--text-soft);
+  }
+  .about-bullet .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--sage); flex-shrink: 0;
+  }
+
+  /* ─── STATS ROW ────────────────────────────────────── */
+  .stats-row {
+    background: var(--linen-warm);
+    padding: 3.5rem 0;
+  }
+  .stats-row__inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .stat-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border-top: 3px solid var(--sage-soft);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .stat-num {
+    font-family: 'Lora', serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: var(--sage-dark);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-soft);
+    line-height: 1.4;
+  }
+
+  /* ─── SERVICES ─────────────────────────────────────── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .service-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 2rem 1.75rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-bottom: 3px solid transparent;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-bottom-color: var(--sage);
+  }
+  .service-icon {
+    width: 52px; height: 52px;
+    background: var(--sage-soft);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.1rem;
+    transition: background 0.2s;
+  }
+  .service-card:hover .service-icon { background: var(--amber-soft); }
+  .service-card h3 { font-size: 1.15rem; margin-bottom: 0.6rem; color: var(--text); }
+  .service-card p  { font-size: 0.88rem; line-height: 1.7; }
+
+  /* ─── WHY CHOOSE ───────────────────────────────────── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .why-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    display: flex;
+    gap: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+    align-items: flex-start;
+  }
+  .why-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .why-card-icon {
+    width: 48px; height: 48px;
+    background: var(--amber-soft);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .why-card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+  .why-card p  { font-size: 0.86rem; line-height: 1.7; }
+
+  .why-feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+  .why-feature-row img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+  .why-feature-text h2 { margin-bottom: 1rem; }
+  .why-feature-text p  { font-size: 1rem; line-height: 1.85; margin-bottom: 1.5rem; }
+
+  /* ─── GALLERY ──────────────────────────────────────── */
+  .gallery-mosaic {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-template-rows: 260px 260px;
+    gap: 0.85rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .gal-item {
+    overflow: hidden;
+    position: relative;
+    border-radius: 0;
+  }
+  .gal-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .gal-item:hover img { transform: scale(1.06); }
+  .gal-item.tall     { grid-row: span 2; }
+  .gal-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(to top, rgba(59,48,40,0.6) 0%, transparent 100%);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .gal-item:hover .gal-caption { opacity: 1; }
+
+  /* ─── TESTIMONIALS ─────────────────────────────────── */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .tcard {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tcard:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .tcard-quote-mark {
+    font-family: 'Lora', serif;
+    font-size: 4rem;
+    color: var(--sage-soft);
+    line-height: 0.8;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .tcard-stars { color: #E8A030; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 0.85rem; }
+  .tcard-text  {
+    font-size: 0.92rem;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+  .tcard-author { display: flex; align-items: center; gap: 0.75rem; }
+  .tcard-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--sage-soft);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--sage-dark);
+  }
+  .tcard-name { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+  .tcard-rel  { font-size: 0.76rem; color: var(--text-lighter); }
+
+  /* ─── AMENITIES ────────────────────────────────────── */
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+  .amenity-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .amenity-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .amenity-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .amenity-card h4 { font-family: 'Lora', serif; font-size: 1rem; font-weight: 500; margin-bottom: 0.4rem; }
+  .amenity-card p  { font-size: 0.8rem; line-height: 1.6; }
+
+  /* ─── CTA SECTION ──────────────────────────────────── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--sage-dark) 0%, #4A6B50 100%);
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .cta-section::after {
+    content: '';
+    position: absolute;
+    top: -40px; left: 10%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(196,147,106,0.12);
+  }
+  .cta-inner {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .cta-inner h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .cta-inner p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+  }
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn-white {
+    background: var(--white);
+    color: var(--sage-dark);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+  }
+  .btn-white:hover {
+    background: var(--linen);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+  .btn-outline-white {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.5);
+  }
+  .btn-outline-white:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.8);
+  }
+
+  /* ─── CONTACT ──────────────────────────────────────── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-info h2 { margin-bottom: 0.85rem; }
+  .contact-info > p { margin-bottom: 2.25rem; font-size: 1rem; line-height: 1.8; }
+  .contact-detail-list { display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--cream);
+  }
+  .contact-detail:last-child { border-bottom: none; padding-bottom: 0; }
+  .contact-detail-icon {
+    width: 42px; height: 42px;
+    background: var(--sage-soft);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .contact-detail strong { display: block; font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+  .contact-detail span  { font-size: 0.9rem; color: var(--text-soft); line-height: 1.55; }
+  .contact-detail a { color: var(--sage-dark); font-weight: 600; }
+
+  /* Form */
+  .contact-form-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2.75rem;
+    box-shadow: var(--shadow-lg);
+  }
+  .contact-form-card h3 { font-size: 1.6rem; margin-bottom: 0.4rem; }
+  .contact-form-card > p { font-size: 0.88rem; color: var(--text-soft); margin-bottom: 2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .fg { margin-bottom: 1rem; }
+  .fg label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin-bottom: 0.35rem;
+  }
+  .fg input,
+  .fg select,
+  .fg textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid var(--cream);
+    border-radius: var(--radius-sm);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--linen);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    appearance: none;
+  }
+  .fg input:focus,
+  .fg select:focus,
+  .fg textarea:focus {
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px rgba(123,158,130,0.15);
+    background: var(--white);
+  }
+  .fg textarea { height: 90px; resize: vertical; }
+  .form-submit {
+    width: 100%;
+    padding: 0.9rem;
+    background: var(--amber);
+    color: var(--white);
+    border: none;
+    border-radius: 100px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(196,147,106,0.35);
+    margin-top: 0.5rem;
+  }
+  .form-submit:hover {
+    background: var(--amber-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(196,147,106,0.45);
+  }
+  .form-note {
+    font-size: 0.74rem;
+    color: var(--text-lighter);
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+
+  /* ─── FOOTER ───────────────────────────────────────── */
+  footer {
+    background: var(--text);
+    padding: 4rem 0 2.5rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr;
+    gap: 3.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-brand-name {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+  .footer-brand p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.8;
+    max-width: 280px;
+    margin-bottom: 1.25rem;
+  }
+  .footer-dshs {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(123,158,130,0.15);
+    border: 1px solid rgba(123,158,130,0.3);
+    border-radius: 100px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage-soft);
+  }
+  .footer-col h4 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1.1rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-col ul a {
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.55);
+    transition: color 0.2s;
+  }
+  .footer-col ul a:hover { color: rgba(255,255,255,0.88); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.28); }
+  .footer-links { display: flex; gap: 1.75rem; }
+  .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.28); transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,0.6); }
+
+  /* ─── TEAM ─────────────────────────────────────────── */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .team-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .team-photo {
+    height: 260px;
+    overflow: hidden;
+  }
+  .team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.5s ease;
+  }
+  .team-card:hover .team-photo img { transform: scale(1.04); }
+  .team-info {
+    padding: 1.75rem;
+  }
+  .team-info h3 { font-size: 1.3rem; margin-bottom: 0.25rem; }
+  .team-role {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 0.9rem;
+  }
+  .team-info p { font-size: 0.88rem; line-height: 1.75; }
+  .team-photo--initial {
+    background: linear-gradient(135deg, var(--sage-soft) 0%, var(--amber-soft) 100%) !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  .team-photo--initial span {
+    font-family: 'Lora', serif;
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--sage-dark);
+    line-height: 1;
+  }
+  .gallery-row2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+    margin-top: 0.85rem;
+  }
+  .gallery-row2 .gal-item { height: 260px; border-radius: 0; }
+  @media (max-width: 640px) { .gallery-row2 { grid-template-columns: 1fr; } }
+  .team-quote {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 3rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--amber);
+  }
+  .team-quote-text {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .team-quote-attr {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+  }
+  @media (max-width: 1024px) {
+    .team-grid { grid-template-columns: 1fr; }
+    .team-photo { height: 220px; }
+    .team-quote { padding: 2rem; }
+  }
+
+  /* ─── SCROLL REVEAL ────────────────────────────────── */
+  [data-sr] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  [data-sr].in { opacity: 1; transform: none; }
+  [data-sr-d="1"] { transition-delay: 0.1s; }
+  [data-sr-d="2"] { transition-delay: 0.2s; }
+  [data-sr-d="3"] { transition-delay: 0.3s; }
+  [data-sr-d="4"] { transition-delay: 0.4s; }
+
+  /* ─── RESPONSIVE ───────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .hero__card { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-photo-wrap img { height: 380px; }
+    .stats-row__inner { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-feature-row { grid-template-columns: 1fr; }
+    .why-feature-row img { height: 300px; }
+    .why-grid { grid-template-columns: 1fr; }
+    .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gal-item.tall { grid-row: auto; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: span 2; }
+    .nav__links { display: none; }
+    .nav__toggle { display: flex; }
+  }
+  @media (max-width: 640px) {
+    .hero__title { font-size: 2.4rem; }
+    .stats-row__inner { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr; }
+    .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-brand { grid-column: auto; }
+    .form-row { grid-template-columns: 1fr; }
+    .gallery-mosaic { grid-template-columns: 1fr; }
+    .trust-strip__inner { gap: 1.25rem; }
+  }
+
+  /* Mobile nav open */
+  .nav__links.is-open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: rgba(250,247,242,0.98);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--cream);
+    padding: 1.5rem 2rem 2rem;
+    gap: 1.25rem;
+    z-index: 199;
+    box-shadow: var(--shadow-md);
+  }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════ NAV ════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__brand">
+      <span class="nav__name">Life Care Adult Family Home</span>
+      <span class="nav__sub">Vancouver, Washington</span>
+    </a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="tel:3604338157" class="nav__phone">📞 (360) 260-9691</a>
+      <a href="#contact" class="btn btn-sage" style="padding:0.6rem 1.4rem;font-size:0.82rem;">Schedule a Tour</a>
+    </div>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section class="hero" id="home">
+<div class="hero__inner">
+
+  <!-- Left: text content -->
+  <div class="hero__left">
+    <span class="hero__badge" data-sr>🏡 Licensed Adult Family Home · Vancouver, WA</span>
+
+    <h1 class="hero__title" data-sr data-sr-d="1">
+      A Real Home for<br/>the People You<br/><em>Love Most</em>
+    </h1>
+
+    <p class="hero__desc" data-sr data-sr-d="2">
+      Warm, personalized residential care in Vancouver, WA — run by the Rosca family.
+      Specializing in mental health, dementia, and developmental disabilities in a
+      true family home, not a facility.
+    </p>
+
+    <div class="hero__actions" data-sr data-sr-d="3">
+      <a href="#contact" class="btn btn-amber">Schedule a Free Tour →</a>
+      <a href="tel:3604338157" class="btn-text"><span>📞</span> (360) 260-9691</a>
+    </div>
+
+    <div class="hero__trust" data-sr data-sr-d="4">
+      <div class="hero__trust-item">
+        <div class="hero__trust-check">✓</div>
+        Licensed by Washington State DSHS
+      </div>
+      <div class="hero__trust-item">
+        <div class="hero__trust-check">✓</div>
+        Maximum 6 residents — truly personal care
+      </div>
+      <div class="hero__trust-item">
+        <div class="hero__trust-check">✓</div>
+        24/7 on-site caregivers, day and night
+      </div>
+      <div class="hero__trust-item">
+        <div class="hero__trust-check">✓</div>
+        Family-run and operated by the Rosca family
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: contained photo -->
+  <div class="hero__right">
+    <div class="hero__photo-wrap">
+      <img
+        class="hero__photo"
+        src="images/dining-room.jpg"
+        alt="Warm dining room at Life Care Adult Family Home in Vancouver, WA"
+      />
+      <!-- Floating stat — top right -->
+      <div class="hero__photo-stat">
+        <div class="hero__photo-stat-num">6</div>
+        <div class="hero__photo-stat-label">Max<br/>Residents</div>
+      </div>
+      <!-- Floating badge — bottom left -->
+      <div class="hero__photo-badge">
+        <div class="hero__photo-badge-icon">❤️</div>
+        <div>
+          <div class="hero__photo-badge-title">Family-Run Care</div>
+          <div class="hero__photo-badge-sub">Estera, Cornel & Deborah Rosca</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.hero__inner -->
+</section>
+
+<!-- ════════════════════ TRUST STRIP ════════════════════ -->
+<div class="trust-strip">
+  <div class="trust-strip__inner">
+    <div class="trust-strip__item"><span class="ic">🏛️</span> Licensed by WA DSHS</div>
+    <div class="trust-strip__item"><span class="ic">👥</span> Maximum 6 Residents</div>
+    <div class="trust-strip__item"><span class="ic">🌙</span> 24/7 On-Site Caregivers</div>
+    <div class="trust-strip__item"><span class="ic">📋</span> Individualized Care Plans</div>
+    <div class="trust-strip__item"><span class="ic">❤️</span> Family-Run & Operated</div>
+  </div>
+</div>
+
+<!-- ════════════════════ ABOUT ════════════════════ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo-wrap" data-sr>
+        <img
+          src="images/kitchen-1.jpg"
+          alt="Beautiful modern kitchen at Life Care Adult Family Home"
+        />
+        <div class="about-photo-badge">
+          <span class="leaf">🌿</span>
+          <div>
+            <div class="about-photo-badge-name">The Rosca Family</div>
+            <div class="about-photo-badge-role">Estera, Cornel & Deborah Rosca · Operators</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content" data-sr data-sr-d="2">
+        <span class="eyebrow">About Life Care</span>
+        <h2>Care That Feels Like Coming Home</h2>
+        <p>
+          At Life Care Adult Family Home, we believe the best care happens in a real home — not a
+          large facility. Located at 12920 NE 126th Ave in Vancouver, WA, our home is exactly that:
+          a warm, welcoming space where your loved one is known, valued, and cared for every day.
+        </p>
+        <p>
+          Founded and operated by <strong>Estera, Cornel, and Deborah Rosca</strong>, Life Care
+          accepts a maximum of six residents. That means your family member isn't just a room
+          number — they're a person we know deeply, care for personally, and treat like our own.
+        </p>
+        <p>
+          As a family ourselves, we understand what it means to entrust the care of someone you
+          love. We are fully licensed by the Washington State Department of Social and Health
+          Services (DSHS), specializing in mental health care, dementia & memory loss, and
+          developmental disabilities.
+        </p>
+        <div class="about-divider"></div>
+        <div class="about-bullets">
+          <div class="about-bullet"><div class="dot"></div> Licensed by Washington State DSHS</div>
+          <div class="about-bullet"><div class="dot"></div> All caregivers trained & background-checked</div>
+          <div class="about-bullet"><div class="dot"></div> Serving Clark County & surrounding areas</div>
+          <div class="about-bullet"><div class="dot"></div> Family visits always encouraged</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ MEET THE FAMILY ════════════════════ -->
+<section class="section section-warm" id="team">
+  <div class="container">
+    <div class="section-intro" data-sr>
+      <span class="eyebrow">The People Behind the Care</span>
+      <h2>Meet the Rosca Family</h2>
+      <p>Life Care is family-run because we believe family values belong at the heart of every care home. We don't just manage a business — we open our home.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card" data-sr>
+        <div class="team-photo team-photo--initial">
+          <span>E</span>
+        </div>
+        <div class="team-info">
+          <h3>Estera Rosca</h3>
+          <span class="team-role">Lead Operator & Primary Caregiver</span>
+          <p>Estera is the heart of Life Care. With hands-on care experience and a deep passion for supporting adults with complex needs, she ensures every resident feels safe, seen, and genuinely cared for each day.</p>
+        </div>
+      </div>
+      <div class="team-card" data-sr data-sr-d="1">
+        <div class="team-photo team-photo--initial">
+          <span>C</span>
+        </div>
+        <div class="team-info">
+          <h3>Cornel Rosca</h3>
+          <span class="team-role">Co-Operator & Home Manager</span>
+          <p>Cornel ensures the home runs smoothly, safely, and comfortably for every resident. From maintenance to logistics, he takes pride in creating a well-kept, welcoming environment that truly feels like home.</p>
+        </div>
+      </div>
+      <div class="team-card" data-sr data-sr-d="2">
+        <div class="team-photo team-photo--initial">
+          <span>D</span>
+        </div>
+        <div class="team-info">
+          <h3>Deborah Rosca</h3>
+          <span class="team-role">Co-Operator & Family Liaison</span>
+          <p>Deborah is the warm point of contact for families navigating the care journey. She answers questions, eases worries, and ensures every family feels informed, supported, and genuinely welcome.</p>
+        </div>
+      </div>
+    </div>
+    <div class="team-quote" data-sr>
+      <p class="team-quote-text">"We didn't open a facility — we opened our home. Every person who comes here becomes part of our family, and we carry that responsibility with pride every single day."</p>
+      <span class="team-quote-attr">— Estera, Cornel & Deborah Rosca</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ STATS ════════════════════ -->
+<div class="stats-row">
+  <div class="stats-row__inner">
+    <div class="stat-card" data-sr>
+      <div class="stat-num">6</div>
+      <div class="stat-label">Maximum residents for truly personal care</div>
+    </div>
+    <div class="stat-card" data-sr data-sr-d="1">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">On-site caregiver coverage, every hour</div>
+    </div>
+    <div class="stat-card" data-sr data-sr-d="2">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Customized care plans for every resident</div>
+    </div>
+    <div class="stat-card" data-sr data-sr-d="3">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Home-cooked meals prepared fresh every day</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ SERVICES ════════════════════ -->
+<section class="section section-cream" id="services">
+  <div class="container">
+    <div class="section-intro" data-sr>
+      <span class="eyebrow">What We Offer</span>
+      <h2>Care for Every Stage of Life</h2>
+      <p>From daily personal care to specialized support — every service is tailored to each resident and delivered with warmth, skill, and genuine attention.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-sr>
+        <div class="service-icon">🧠</div>
+        <h3>Mental Health Care</h3>
+        <p>Structured, compassionate support for adults living with depression, anxiety, schizophrenia, bipolar disorder, and other mental health conditions — in a calm, home-like setting.</p>
+      </div>
+      <div class="service-card" data-sr data-sr-d="1">
+        <div class="service-icon">🌿</div>
+        <h3>Dementia & Memory Care</h3>
+        <p>Gentle, structured care for all stages of Alzheimer's and dementia. We create familiar routines, reduce anxiety, and focus on comfort and preserved dignity every single day.</p>
+      </div>
+      <div class="service-card" data-sr data-sr-d="2">
+        <div class="service-icon">🤝</div>
+        <h3>Developmental Disabilities</h3>
+        <p>Warm, supportive care for adults with intellectual and developmental disabilities — encouraging independence, joy, and belonging in a genuine home environment.</p>
+      </div>
+      <div class="service-card" data-sr>
+        <div class="service-icon">🛁</div>
+        <h3>Personal Care Assistance</h3>
+        <p>Dignified, respectful help with bathing, grooming, dressing, mobility, and hygiene — all provided with patience, sensitivity, and genuine care.</p>
+      </div>
+      <div class="service-card" data-sr data-sr-d="1">
+        <div class="service-icon">💊</div>
+        <h3>Medication Management</h3>
+        <p>Safe, accurate medication administration by trained caregivers following physician plans, with careful monitoring and coordination with each resident's healthcare team.</p>
+      </div>
+      <div class="service-card" data-sr data-sr-d="2">
+        <div class="service-icon">🍽️</div>
+        <h3>Nutritious Home Meals</h3>
+        <p>Three home-cooked, well-balanced meals daily plus snacks — accommodating dietary needs, medical requirements, and personal food preferences for every resident.</p>
+      </div>
+      <div class="service-card" data-sr>
+        <div class="service-icon">🕊️</div>
+        <h3>Hospice & End-of-Life Care</h3>
+        <p>Compassionate end-of-life care in a peaceful, familiar home. We partner with hospice providers to ensure comfort, dignity, and presence for residents and families.</p>
+      </div>
+      <div class="service-card" data-sr data-sr-d="1">
+        <div class="service-icon">🏥</div>
+        <h3>Health Monitoring</h3>
+        <p>Ongoing monitoring of vital signs and health changes, with prompt communication to physicians and specialists when needed.</p>
+      </div>
+      <div class="service-card" data-sr data-sr-d="2">
+        <div class="service-icon">🎨</div>
+        <h3>Activities & Social Life</h3>
+        <p>Enriching daily activities, gentle exercise, social time, and therapeutic recreation — designed to promote well-being, purpose, and genuine happiness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ WHY CHOOSE ════════════════════ -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="why-feature-row">
+      <img
+        src="images/kitchen-2.jpg"
+        alt="Spacious kitchen and living area at Life Care Adult Family Home"
+        data-sr
+      />
+      <div class="why-feature-text" data-sr data-sr-d="2">
+        <span class="eyebrow">Why Families Choose Us</span>
+        <h2>A Different Kind of Care Home</h2>
+        <p>
+          Life Care isn't a large institution with rotating staff and crowded hallways.
+          It's a home — with a maximum of six residents, familiar caregivers every day,
+          and an operator who is personally present and invested in every resident's life.
+        </p>
+        <p>
+          That level of personal care is something no large facility can replicate. Families
+          notice the difference within days. Residents feel it from the very first morning.
+        </p>
+        <a href="#contact" class="btn btn-sage">Come See Our Home →</a>
+      </div>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card" data-sr>
+        <div class="why-card-icon">🏡</div>
+        <div>
+          <h3>A Real Home, Not a Facility</h3>
+          <p>Residents live in an actual home — with a cozy living room, home-cooked meals, a garden, and spaces that feel warm and personal, not institutional.</p>
+        </div>
+      </div>
+      <div class="why-card" data-sr data-sr-d="1">
+        <div class="why-card-icon">👩‍⚕️</div>
+        <div>
+          <h3>Same Familiar Caregivers Daily</h3>
+          <p>Consistent faces every day. For mental health and dementia residents, this familiarity and trust is not just comforting — it's medically essential.</p>
+        </div>
+      </div>
+      <div class="why-card" data-sr>
+        <div class="why-card-icon">📋</div>
+        <div>
+          <h3>Truly Personalized Care Plans</h3>
+          <p>Every resident gets an individualized care plan built around their specific needs — reviewed regularly and updated with family input throughout.</p>
+        </div>
+      </div>
+      <div class="why-card" data-sr data-sr-d="1">
+        <div class="why-card-icon">💬</div>
+        <div>
+          <h3>Open Family Communication</h3>
+          <p>We keep families informed and involved. Visits are always welcome, and you'll always have direct access to Estera — not a call center.</p>
+        </div>
+      </div>
+      <div class="why-card" data-sr>
+        <div class="why-card-icon">🔒</div>
+        <div>
+          <h3>24/7 On-Site Care & Safety</h3>
+          <p>Trained caregivers are always present — day and night — so your loved one is never alone and always supported when they need it most.</p>
+        </div>
+      </div>
+      <div class="why-card" data-sr data-sr-d="1">
+        <div class="why-card-icon">🏛️</div>
+        <div>
+          <h3>Fully Licensed & Compliant</h3>
+          <p>Life Care is fully licensed by the Washington State DSHS. All caregivers are trained and background-checked to meet state standards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ GALLERY ════════════════════ -->
+<section class="section section-warm" id="gallery">
+  <div class="container">
+    <div class="section-intro" data-sr>
+      <span class="eyebrow">Our Home</span>
+      <h2>A Warm, Welcoming Space</h2>
+      <p>Take a look at the comfortable, home-like environment where our residents live, relax, and thrive every day.</p>
+    </div>
+    <div class="gallery-mosaic" data-sr>
+      <div class="gal-item tall">
+        <img src="images/dining-room.jpg" alt="Dining room with wood table and pendant light" />
+        <div class="gal-caption">Dining Area</div>
+      </div>
+      <div class="gal-item">
+        <img src="images/bedroom-1.jpg" alt="Cozy private bedroom with armchair" />
+        <div class="gal-caption">Private Bedroom</div>
+      </div>
+      <div class="gal-item">
+        <img src="images/kitchen-1.jpg" alt="Modern white kitchen with island" />
+        <div class="gal-caption">Full Kitchen</div>
+      </div>
+      <div class="gal-item">
+        <img src="images/bathroom-accessible.jpg" alt="ADA-accessible roll-in shower with grab bars" />
+        <div class="gal-caption">ADA-Accessible Bathroom</div>
+      </div>
+      <div class="gal-item">
+        <img src="images/bedroom-2.jpg" alt="Bedroom with closet and hallway" />
+        <div class="gal-caption">Bedroom & Storage</div>
+      </div>
+    </div>
+    <!-- Second row: remaining photos -->
+    <div class="gallery-row2" data-sr>
+      <div class="gal-item">
+        <img src="images/kitchen-2.jpg" alt="Kitchen from alternate angle showing island" />
+        <div class="gal-caption">Kitchen Island</div>
+      </div>
+      <div class="gal-item">
+        <img src="images/bathroom.jpg" alt="Full bathroom with vanity and shower" />
+        <div class="gal-caption">Full Bathroom</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ TESTIMONIALS ════════════════════ -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-intro" data-sr>
+      <span class="eyebrow">Families We've Served</span>
+      <h2>What Families Are Saying</h2>
+      <p>The trust of the families we serve is our greatest honor. Here's what some of them have shared.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="tcard" data-sr>
+        <span class="tcard-quote-mark">"</span>
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">Moving my mother to Life Care was the best decision our family made. She's genuinely happy here — calmer, more like herself. Estera and her team treat her like family, and that means everything.</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">M</div>
+          <div>
+            <span class="tcard-name">Maria T.</span>
+            <span class="tcard-rel">Daughter of resident</span>
+          </div>
+        </div>
+      </div>
+      <div class="tcard" data-sr data-sr-d="1">
+        <span class="tcard-quote-mark">"</span>
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">My brother has developmental disabilities and we searched for years to find the right place. The small size, the consistent caregivers, and the genuine warmth here made all the difference. He is thriving.</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">J</div>
+          <div>
+            <span class="tcard-name">James R.</span>
+            <span class="tcard-rel">Brother of resident</span>
+          </div>
+        </div>
+      </div>
+      <div class="tcard" data-sr data-sr-d="2">
+        <span class="tcard-quote-mark">"</span>
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">Dad has dementia and we were terrified about placement. The calm environment and familiar faces at Life Care have made his days so much more peaceful. We can finally breathe again.</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">S</div>
+          <div>
+            <span class="tcard-name">Sarah K.</span>
+            <span class="tcard-rel">Daughter of resident</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ AMENITIES ════════════════════ -->
+<section class="section section-cream" id="amenities">
+  <div class="container">
+    <div class="section-intro" data-sr>
+      <span class="eyebrow">Life at Our Home</span>
+      <h2>Everything Your Loved One Needs</h2>
+      <p>Every detail of our home is chosen with resident comfort, safety, and happiness in mind.</p>
+    </div>
+    <div class="amenities-grid">
+      <div class="amenity-card" data-sr>
+        <div class="amenity-icon">🛏️</div>
+        <h4>Private Bedrooms</h4>
+        <p>Comfortable, furnished rooms residents can personalize as their own.</p>
+      </div>
+      <div class="amenity-card" data-sr data-sr-d="1">
+        <div class="amenity-icon">🍳</div>
+        <h4>Home-Cooked Meals</h4>
+        <p>Fresh, nutritious meals prepared daily with each person's preferences in mind.</p>
+      </div>
+      <div class="amenity-card" data-sr data-sr-d="2">
+        <div class="amenity-icon">🌳</div>
+        <h4>Outdoor Garden</h4>
+        <p>Safe outdoor spaces for fresh air, gentle walks, and time in nature.</p>
+      </div>
+      <div class="amenity-card" data-sr data-sr-d="3">
+        <div class="amenity-icon">🧺</div>
+        <h4>Laundry Services</h4>
+        <p>Full laundry care included — always fresh, clean clothing.</p>
+      </div>
+      <div class="amenity-card" data-sr>
+        <div class="amenity-icon">📺</div>
+        <h4>Cozy Common Areas</h4>
+        <p>Warm shared spaces for relaxing, socializing, and group activities.</p>
+      </div>
+      <div class="amenity-card" data-sr data-sr-d="1">
+        <div class="amenity-icon">🚿</div>
+        <h4>Accessible Bathrooms</h4>
+        <p>ADA-accessible bathrooms with grab bars and safety features throughout.</p>
+      </div>
+      <div class="amenity-card" data-sr data-sr-d="2">
+        <div class="amenity-icon">🚗</div>
+        <h4>Transportation Help</h4>
+        <p>Coordination of rides to medical appointments and community events.</p>
+      </div>
+      <div class="amenity-card" data-sr data-sr-d="3">
+        <div class="amenity-icon">👨‍👩‍👧</div>
+        <h4>Family Always Welcome</h4>
+        <p>Open-door policy for families — your loved one's connections matter deeply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CTA ════════════════════ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner" data-sr>
+      <h2>Ready to Find the Right Home for Your Loved One?</h2>
+      <p>Schedule a free, no-obligation tour and see Life Care for yourself. We'd love to meet you and your family.</p>
+      <div class="cta-actions">
+        <a href="#contact" class="btn btn-white">Schedule a Free Tour →</a>
+        <a href="tel:3604338157" class="btn btn-outline-white">Call (360) 260-9691</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CONTACT ════════════════════ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info" data-sr>
+        <span class="eyebrow">Get in Touch</span>
+        <h2>We're Here to Help Your Family</h2>
+        <p>Reach out to ask questions, schedule a tour, or simply talk through your situation. There's no pressure — just a warm, honest conversation. We respond to every inquiry personally.</p>
+        <div class="contact-detail-list">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <div>
+              <strong>Phone</strong>
+              <span><a href="tel:3604338157">(360) 260-9691</a></span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div>
+              <strong>Address</strong>
+              <span>12920 NE 126th Ave<br/>Vancouver, WA 98682</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">🕐</div>
+            <div>
+              <strong>Office Hours</strong>
+              <span>Mon–Fri: 9:00 AM – 6:00 PM<br/>Sat: 10:00 AM – 4:00 PM</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">🏛️</div>
+            <div>
+              <strong>Licensing</strong>
+              <span>Licensed by Washington State DSHS<br/>Residential Care Services</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-card" data-sr data-sr-d="2">
+        <h3>Schedule a Tour</h3>
+        <p>Fill out the form and we'll be in touch within 24 hours.</p>
+        <form onsubmit="handleForm(event)">
+          <div class="form-row">
+            <div class="fg">
+              <label>First Name *</label>
+              <input type="text" placeholder="Jane" required />
+            </div>
+            <div class="fg">
+              <label>Last Name *</label>
+              <input type="text" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="fg">
+            <label>Email Address *</label>
+            <input type="email" placeholder="jane@email.com" required />
+          </div>
+          <div class="fg">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(360) 555-0100" />
+          </div>
+          <div class="fg">
+            <label>Type of Care Needed</label>
+            <select>
+              <option value="">Select care type...</option>
+              <option>Assisted Living</option>
+              <option>Memory / Dementia Care</option>
+              <option>Mental Health Support</option>
+              <option>Developmental Disabilities Care</option>
+              <option>Hospice / End-of-Life Care</option>
+              <option>Respite / Short-Term Stay</option>
+              <option>Not Sure — Need Guidance</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Preferred Tour Date</label>
+            <input type="date" />
+          </div>
+          <div class="fg">
+            <label>Message</label>
+            <textarea placeholder="Tell us about your loved one and any questions you have..."></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="formBtn">Send Message →</button>
+          <p class="form-note">Your information is private and will never be shared. Licensed by WA DSHS.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">Life Care Adult Family Home</div>
+        <p>Compassionate, licensed residential care in Vancouver, WA. Specializing in mental health, dementia, and developmental disabilities.</p>
+        <span class="footer-dshs">🏛️ Licensed by WA DSHS</span>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:3604338157">(360) 260-9691</a></li>
+          <li><a href="#">12920 NE 126th Ave</a></li>
+          <li><a href="#">Vancouver, WA 98682</a></li>
+          <li><a href="#contact">Schedule a Tour →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Life Care Adult Family Home. All rights reserved. Operated by Estera, Cornel & Deborah Rosca.</span>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Nav scroll */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive: true });
+
+  /* Mobile nav */
+  const navToggle = document.getElementById('navToggle');
+  const navLinks  = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('is-open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('is-open')));
+
+  /* Scroll reveal */
+  const srObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); srObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('[data-sr]').forEach(el => srObserver.observe(el));
+
+  /* Form handler */
+  function handleForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('formBtn');
+    btn.textContent = '✓ Message Sent — We\'ll be in touch soon!';
+    btn.style.background = 'var(--sage-dark)';
+    btn.disabled = true;
+    e.target.reset();
+  }
+
+  /* Smooth scroll */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const t = document.querySelector(this.getAttribute('href'));
+      if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 78, behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
