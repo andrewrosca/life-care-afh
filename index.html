@@ -74,6 +74,7 @@
           }
         ],
         "image": "https://www.lifecareadultfamilyhome.com/images/dining-room.jpg",
+        "foundingDate": "2000",
         "priceRange": "$$",
         "areaServed": [
           {"@type": "City", "name": "Vancouver", "sameAs": "https://en.wikipedia.org/wiki/Vancouver,_Washington"},
@@ -567,14 +568,13 @@
   .hero__photo-wrap {
     position: relative;
     width: 100%;
-    height: 100%;
-    min-height: 540px;
+    height: 540px;
   }
   .hero__photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 100%;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     display: block;
@@ -637,17 +637,19 @@
 
   /* Hero responsive */
   @media (max-width: 900px) {
-    .hero__inner {
-      grid-template-columns: 1fr;
-      padding: 3rem 2rem;
-      gap: 2.5rem;
-    }
+    .hero { min-height: unset; align-items: flex-start; }
+    .hero__inner { grid-template-columns: 1fr; padding: 3rem 2rem; gap: 2.5rem; }
     .hero__left { order: 1; }
     .hero__left::before { display: none; }
     .hero__right { order: 2; }
-    .hero__photo-wrap { min-height: 320px; }
+    .hero__photo-wrap { height: 320px; }
+    .hero__photo { object-position: center 100%; }
     .hero__photo-badge { left: 1rem; bottom: 1rem; }
     .hero__photo-stat  { right: 1rem; top: 1rem; }
+    .trust-strip__inner {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0.75rem 1.5rem;
+    }
   }
 
   /* ─── TRUST STRIP ──────────────────────────────────── */
@@ -656,18 +658,17 @@
     padding: 1.1rem 0;
   }
   .trust-strip__inner {
-    max-width: 1160px;
+    max-width: 860px;
     margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
-    flex-wrap: wrap;
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem 2rem;
   }
   .trust-strip__item {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.55rem;
     font-size: 0.85rem;
     font-weight: 500;
@@ -682,12 +683,15 @@
     gap: 4rem;
     align-items: stretch;
   }
+  .about-photo-outer {
+    position: relative;
+  }
   .about-photo-wrap {
     position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    min-height: 520px;
+    min-height: 680px;
   }
   .about-photo-wrap img {
     width: 100%;
@@ -1418,7 +1422,7 @@
   .why-card-icon svg       { width: 1.35rem; height: 1.35rem; stroke: var(--amber-dark); stroke-width: 1.75; }
   .amenity-icon svg        { width: 2rem; height: 2rem; stroke: var(--sage-dark); stroke-width: 1.5; }
   .contact-detail-icon svg { width: 1.2rem; height: 1.2rem; stroke: var(--sage-dark); stroke-width: 1.75; }
-  .trust-strip__item svg   { width: 1.1rem; height: 1.1rem; stroke: var(--sage-dark); stroke-width: 1.75; vertical-align: -0.2em; }
+  .trust-strip__item svg   { width: 1.1rem; height: 1.1rem; stroke: rgba(255,255,255,0.75); stroke-width: 1.75; vertical-align: -0.2em; }
   .hero__trust-check svg   { width: 0.7rem; height: 0.7rem; stroke: var(--sage-dark); stroke-width: 3; }
   .hero__photo-badge-icon svg { width: 1.5rem; height: 1.5rem; stroke: var(--amber); stroke-width: 1.75; fill: var(--amber-soft); }
   .hero__badge svg         { width: 0.85rem; height: 0.85rem; stroke: var(--sage-dark); stroke-width: 2; vertical-align: -0.1em; }
@@ -1444,7 +1448,7 @@
   @media (max-width: 1024px) {
     .hero__card { display: none; }
     .about-grid { grid-template-columns: 1fr; }
-    .about-photo-wrap img { height: 380px; }
+    .about-photo-wrap { min-height: 500px; height: 500px; }
     .stats-row__inner { grid-template-columns: repeat(2, 1fr); }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .why-feature-row { grid-template-columns: 1fr; }
@@ -1468,12 +1472,16 @@
     .hero__tagline { font-size: 1.05rem; }
     .hero__badge { font-size: 0.62rem; white-space: nowrap; }
     .trust-strip__inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.65rem 1.25rem;
-      justify-items: start;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0.5rem 1.25rem;
     }
-    .about-photo-badge { display: none; }
+    .about-photo-badge {
+      position: static;
+      margin-top: 1rem;
+      background: var(--cream-light);
+      box-shadow: none;
+      border-radius: var(--radius-md);
+    }
     .stats-row__inner { grid-template-columns: repeat(2, 1fr); }
     .services-grid { grid-template-columns: 1fr; }
     .amenities-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1481,7 +1489,6 @@
     .footer-brand { grid-column: auto; }
     .form-row { grid-template-columns: 1fr; }
     .gallery-mosaic { grid-template-columns: 1fr; }
-    .trust-strip__inner { gap: 1.25rem; }
   }
 
   /* Mobile nav open */
@@ -1635,6 +1642,7 @@
     <div class="trust-strip__item"><i data-lucide="moon" aria-hidden="true"></i> 24/7 On-Site Caregivers</div>
     <div class="trust-strip__item"><i data-lucide="clipboard-list" aria-hidden="true"></i> Individualized Care Plans</div>
     <div class="trust-strip__item"><i data-lucide="heart" aria-hidden="true"></i> Family-Run & Operated</div>
+    <div class="trust-strip__item"><i data-lucide="calendar" aria-hidden="true"></i> Serving Families Since 2000</div>
   </div>
 </div>
 
@@ -1642,11 +1650,13 @@
 <section class="section section-white" id="about">
   <div class="container">
     <div class="about-grid">
-      <div class="about-photo-wrap" data-sr>
-        <img
-          src="images/living-room-1.jpg"
-          alt="Spacious living room at Life Care Adult Family Home"
-        />
+      <div class="about-photo-outer" data-sr>
+        <div class="about-photo-wrap">
+          <img
+            src="images/living-room-1.jpg"
+            alt="Spacious living room at Life Care Adult Family Home"
+          />
+        </div>
         <div class="about-photo-badge">
           <span class="leaf"><i data-lucide="leaf" aria-hidden="true"></i></span>
           <div>
@@ -1665,9 +1675,7 @@
           a warm, welcoming space where your loved one is known, valued, and cared for every day.
         </p>
         <p>
-          Founded and operated by <strong>Estera, Cornel, and Deborah Rosca</strong>, Life Care
-          accepts a maximum of six residents. That means your family member isn't just a room
-          number — they're a person we know deeply, care for personally, and treat like our own.
+          Founded in <strong>2000</strong> and operated by <strong>Estera, Cornel, and Deborah Rosca</strong>, Life Care has been a trusted home for Vancouver families for over 25 years. We accept a maximum of six residents — so your family member isn't just a room number, they're a person we know deeply, care for personally, and treat like our own.
         </p>
         <p>
           As a family ourselves, we understand what it means to entrust the care of someone you
@@ -1743,8 +1751,8 @@
       <div class="stat-label">Customized care plans for every resident</div>
     </div>
     <div class="stat-card" data-sr data-sr-d="3">
-      <div class="stat-num">3</div>
-      <div class="stat-label">Home-cooked meals prepared fresh every day</div>
+      <div class="stat-num">25+</div>
+      <div class="stat-label">Years caring for Vancouver families since 2000</div>
     </div>
   </div>
 </div>
@@ -2115,6 +2123,9 @@
             <div>
               <strong>Phone</strong>
               <span><a href="tel:3602609691">(360) 260-9691</a></span>
+              <span style="font-size:0.82rem;color:var(--text-soft);margin-top:0.2rem;display:block;">
+                <a href="tel:3609108818" style="color:inherit;">(360) 910-8818</a> — Estera's cell (call or text)
+              </span>
             </div>
           </div>
           <div class="contact-detail">
@@ -2203,7 +2214,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-brand-name">Life Care Adult Family Home</div>
-        <p>Compassionate, licensed residential care in Vancouver, WA. Specializing in mental health, dementia, and developmental disabilities.</p>
+        <p>Compassionate, licensed residential care in Vancouver, WA since 2000. Specializing in mental health, dementia, and developmental disabilities.</p>
         <span class="footer-dshs"><i data-lucide="award" aria-hidden="true"></i> Licensed by WA DSHS</span>
       </div>
       <div class="footer-col">
@@ -2221,6 +2232,7 @@
         <h3>Contact</h3>
         <ul>
           <li><a href="tel:3602609691">(360) 260-9691</a></li>
+          <li><a href="tel:3609108818">(360) 910-8818</a> <span style="opacity:0.6;font-size:0.8rem;">Estera (call/text)</span></li>
           <li><a href="#">4600 NE 126th Ave</a></li>
           <li><a href="#">Vancouver, WA 98682</a></li>
           <li><a href="#contact">Schedule a Free Tour →</a></li>
