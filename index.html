@@ -2144,28 +2144,29 @@
       <div class="contact-form-card" data-sr data-sr-d="2">
         <h3>Schedule a Free Tour</h3>
         <p>Fill out the form and we'll be in touch within 24 hours.</p>
-        <form onsubmit="handleForm(event)">
+        <form id="contactForm" action="https://formspree.io/f/xjgpeajb" method="POST">
+          <input type="hidden" name="_subject" value="New Tour Request — Life Care Adult Family Home" />
           <div class="form-row">
             <div class="fg">
               <label for="f-first">First Name *</label>
-              <input id="f-first" type="text" placeholder="Jane" required autocomplete="given-name" />
+              <input id="f-first" name="first_name" type="text" placeholder="Jane" required autocomplete="given-name" />
             </div>
             <div class="fg">
               <label for="f-last">Last Name *</label>
-              <input id="f-last" type="text" placeholder="Smith" required autocomplete="family-name" />
+              <input id="f-last" name="last_name" type="text" placeholder="Smith" required autocomplete="family-name" />
             </div>
           </div>
           <div class="fg">
             <label for="f-email">Email Address *</label>
-            <input id="f-email" type="email" placeholder="jane@email.com" required autocomplete="email" />
+            <input id="f-email" name="email" type="email" placeholder="jane@email.com" required autocomplete="email" />
           </div>
           <div class="fg">
             <label for="f-phone">Phone Number</label>
-            <input id="f-phone" type="tel" placeholder="(360) 555-0100" autocomplete="tel" />
+            <input id="f-phone" name="phone" type="tel" placeholder="(360) 555-0100" autocomplete="tel" />
           </div>
           <div class="fg">
             <label for="f-care">Type of Care Needed</label>
-            <select id="f-care">
+            <select id="f-care" name="care_type">
               <option value="">Select care type...</option>
               <option>Assisted Living</option>
               <option>Memory / Dementia Care</option>
@@ -2178,13 +2179,15 @@
           </div>
           <div class="fg">
             <label for="f-date">Preferred Tour Date</label>
-            <input id="f-date" type="date" />
+            <input id="f-date" name="preferred_date" type="date" />
           </div>
           <div class="fg">
             <label for="f-message">Message</label>
-            <textarea id="f-message" placeholder="Tell us about your loved one and any questions you have..."></textarea>
+            <textarea id="f-message" name="message" placeholder="Tell us about your loved one and any questions you have..."></textarea>
           </div>
           <button type="submit" class="form-submit" id="formBtn">Send Message →</button>
+          <p id="formSuccess" style="display:none;text-align:center;color:var(--sage-dark);font-weight:700;font-size:0.95rem;margin-top:1rem;">✓ Message sent! We'll be in touch within 24 hours.</p>
+          <p id="formError" style="display:none;text-align:center;color:#c0392b;font-size:0.88rem;margin-top:1rem;">Something went wrong. Please call us at (360) 260-9691.</p>
           <p class="form-note">Your information is private and will never be shared. Licensed by WA DSHS.</p>
         </form>
       </div>
@@ -2281,14 +2284,36 @@
     });
   });
 
-  /* Form handler */
-  function handleForm(e) {
-    e.preventDefault();
-    const btn = document.getElementById('formBtn');
-    btn.textContent = '✓ Message Sent — We\'ll be in touch soon!';
-    btn.style.background = 'var(--sage-dark)';
-    btn.disabled = true;
-    e.target.reset();
+  /* Form handler — Formspree */
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('formBtn');
+      const success = document.getElementById('formSuccess');
+      const error = document.getElementById('formError');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          contactForm.reset();
+          btn.style.display = 'none';
+          success.style.display = 'block';
+          error.style.display = 'none';
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        btn.textContent = 'Send Message →';
+        btn.disabled = false;
+        error.style.display = 'block';
+      }
+    });
   }
 
   /* Init Lucide icons */
