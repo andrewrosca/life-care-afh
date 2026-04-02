@@ -1310,13 +1310,13 @@
   }
   .gallery-row2 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 0.85rem;
     margin-top: 0.85rem;
   }
   .gallery-row2 .gal-item { height: 220px; border-radius: 0; }
-  @media (max-width: 900px) { .gallery-row2 { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 640px) { .gallery-row2 { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .gallery-row2 { grid-template-columns: 1fr 1fr 1fr; } }
+  @media (max-width: 640px) { .gallery-row2 { grid-template-columns: 1fr 1fr; } }
   .team-quote {
     background: var(--white);
     border-radius: var(--radius-lg);
@@ -1927,6 +1927,10 @@
       <div class="gal-item">
         <img src="images/bathroom.jpg" alt="Full bathroom with vanity at Life Care Adult Family Home Vancouver WA" />
         <div class="gal-caption">Full Bathroom</div>
+      </div>
+      <div class="gal-item">
+        <img src="images/bathroom-2.jpg" alt="Resident bathroom at Life Care Adult Family Home Vancouver WA" />
+        <div class="gal-caption">Resident Bathroom</div>
       </div>
     </div>
   </div>
