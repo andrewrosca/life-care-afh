@@ -2153,53 +2153,60 @@
       </div>
 
       <div class="contact-form-card" data-sr data-sr-d="2">
-        <h3>Schedule a Free Tour</h3>
-        <p>Fill out the form and we'll be in touch within 24 hours.</p>
-        <form id="contactForm" action="https://formspree.io/f/xjgpeajb" method="POST">
-          <input type="hidden" name="_subject" value="New Tour Request — Life Care Adult Family Home" />
-          <div class="form-row">
-            <div class="fg">
-              <label for="f-first">First Name *</label>
-              <input id="f-first" name="first_name" type="text" placeholder="Jane" required autocomplete="given-name" />
+        <div id="formFields">
+          <h3>Schedule a Free Tour</h3>
+          <p>Fill out the form and we'll be in touch within 24 hours.</p>
+          <form id="contactForm" action="https://formspree.io/f/xjgpeajb" method="POST">
+            <input type="hidden" name="_subject" value="New Tour Request — Life Care Adult Family Home" />
+            <div class="form-row">
+              <div class="fg">
+                <label for="f-first">First Name *</label>
+                <input id="f-first" name="first_name" type="text" placeholder="Jane" required autocomplete="given-name" />
+              </div>
+              <div class="fg">
+                <label for="f-last">Last Name *</label>
+                <input id="f-last" name="last_name" type="text" placeholder="Smith" required autocomplete="family-name" />
+              </div>
             </div>
             <div class="fg">
-              <label for="f-last">Last Name *</label>
-              <input id="f-last" name="last_name" type="text" placeholder="Smith" required autocomplete="family-name" />
+              <label for="f-email">Email Address *</label>
+              <input id="f-email" name="email" type="email" placeholder="jane@email.com" required autocomplete="email" />
             </div>
-          </div>
-          <div class="fg">
-            <label for="f-email">Email Address *</label>
-            <input id="f-email" name="email" type="email" placeholder="jane@email.com" required autocomplete="email" />
-          </div>
-          <div class="fg">
-            <label for="f-phone">Phone Number</label>
-            <input id="f-phone" name="phone" type="tel" placeholder="(360) 555-0100" autocomplete="tel" />
-          </div>
-          <div class="fg">
-            <label for="f-care">Type of Care Needed</label>
-            <select id="f-care" name="care_type">
-              <option value="">Select care type...</option>
-              <option>Assisted Living</option>
-              <option>Memory / Dementia Care</option>
-              <option>Mental Health Support</option>
-              <option>Hospice / End-of-Life Care</option>
-              <option>Respite / Short-Term Stay</option>
-              <option>Not Sure — Need Guidance</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label for="f-date">Preferred Tour Date</label>
-            <input id="f-date" name="preferred_date" type="date" />
-          </div>
-          <div class="fg">
-            <label for="f-message">Message</label>
-            <textarea id="f-message" name="message" placeholder="Tell us about your loved one and any questions you have..."></textarea>
-          </div>
-          <button type="submit" class="form-submit" id="formBtn">Send Message →</button>
-          <p id="formSuccess" style="display:none;text-align:center;color:var(--sage-dark);font-weight:700;font-size:0.95rem;margin-top:1rem;">✓ Message sent! We'll be in touch within 24 hours.</p>
-          <p id="formError" style="display:none;text-align:center;color:#c0392b;font-size:0.88rem;margin-top:1rem;">Something went wrong. Please call us at (360) 260-9691.</p>
-          <p class="form-note">Your information is private and will never be shared. Licensed by WA DSHS.</p>
-        </form>
+            <div class="fg">
+              <label for="f-phone">Phone Number</label>
+              <input id="f-phone" name="phone" type="tel" placeholder="(360) 555-0100" autocomplete="tel" />
+            </div>
+            <div class="fg">
+              <label for="f-care">Type of Care Needed</label>
+              <select id="f-care" name="care_type">
+                <option value="">Select care type...</option>
+                <option>Assisted Living</option>
+                <option>Memory / Dementia Care</option>
+                <option>Mental Health Support</option>
+                <option>Hospice / End-of-Life Care</option>
+                <option>Respite / Short-Term Stay</option>
+                <option>Not Sure — Need Guidance</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="f-date">Preferred Tour Date</label>
+              <input id="f-date" name="preferred_date" type="date" />
+            </div>
+            <div class="fg">
+              <label for="f-message">Message</label>
+              <textarea id="f-message" name="message" placeholder="Tell us about your loved one and any questions you have..."></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="formBtn">Send Message →</button>
+            <p id="formError" role="alert" aria-live="assertive" style="display:none;text-align:center;color:#c0392b;font-size:0.88rem;margin-top:1rem;">Something went wrong. Please call us at (360) 260-9691.</p>
+            <p class="form-note">Your information is private and will never be shared. Licensed by WA DSHS.</p>
+          </form>
+        </div>
+        <div id="formSuccess" role="alert" aria-live="polite" style="display:none;text-align:center;padding:2.5rem 1.5rem;">
+          <div style="font-size:3rem;margin-bottom:1rem;">✓</div>
+          <h3 style="color:var(--sage-dark);margin-bottom:0.75rem;">Message Sent!</h3>
+          <p style="color:var(--text-soft);font-size:0.95rem;line-height:1.7;">Thank you for reaching out. We'll be in touch within 24 hours to answer your questions and schedule a tour.</p>
+          <p style="margin-top:1rem;font-size:0.88rem;color:var(--text-lighter);">In the meantime, feel free to call us at <a href="tel:3602609691" style="color:var(--sage-dark);font-weight:600;">(360) 260-9691</a>.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -2301,6 +2308,7 @@
     contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = document.getElementById('formBtn');
+      const formFields = document.getElementById('formFields');
       const success = document.getElementById('formSuccess');
       const error = document.getElementById('formError');
       btn.textContent = 'Sending…';
@@ -2312,10 +2320,8 @@
           headers: { 'Accept': 'application/json' }
         });
         if (res.ok) {
-          contactForm.reset();
-          btn.style.display = 'none';
+          formFields.style.display = 'none';
           success.style.display = 'block';
-          error.style.display = 'none';
         } else {
           throw new Error('Server error');
         }
